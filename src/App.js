@@ -1,19 +1,18 @@
 import "./scss/app.scss";
 import Header from "./components/Header";
-import Home from "./pages/Home";
+
 import React from "react";
-import NotFound from "./pages/NotFound";
-import { useNavigate } from "react-router";
+
 import AppRoutes from "./routes/routes";
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState("");
+
   return (
     <div className="wrapper">
-      <Header />
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className="content">
-        <div className="container">
-          <AppRoutes />
-        </div>
+        <AppRoutes searchValue={searchValue} />
       </div>
     </div>
   );
