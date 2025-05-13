@@ -3,11 +3,11 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Cart from "../pages/Cart";
 
-const AppRoutes = ({ searchValue }) => {
+const AppRoutes = () => {
   const navigationRoutes = [
     {
       path: "/",
-      element: <Home searchValue={searchValue} />,
+      element: <Home />,
     },
     {
       path: "*",
