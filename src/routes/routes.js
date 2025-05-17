@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Cart from "../pages/Cart";
+import FullPizza from "../pages/FullPizza";
 
 const AppRoutes = () => {
   const navigationRoutes = [
@@ -16,6 +17,10 @@ const AppRoutes = () => {
     {
       path: "/cart",
       element: <Cart />,
+    },
+    {
+      path: "/pizza/:id",
+      element: <FullPizza />,
     },
   ];
   return (
