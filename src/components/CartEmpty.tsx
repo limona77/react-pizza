@@ -1,6 +1,7 @@
 import { Link } from "react-router";
+import { JSX } from "react";
 
-const CartEmpty = () => (
+const CartEmpty = (): JSX.Element => (
   <div className="cart cart--empty">
     <h2>
       Корзина пустая <span>😕</span>

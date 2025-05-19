@@ -1,6 +1,14 @@
-import React from "react";
+import React, { JSX } from "react";
 
-function Categories({ value, onChangeCategory }) {
+type CategoriesProps = {
+  value: number;
+  onChangeCategory: (index: number) => void;
+};
+
+const Categories = ({
+  value,
+  onChangeCategory,
+}: CategoriesProps): JSX.Element => {
   const categories = [
     "Все",
     "Мясные",
@@ -25,6 +33,6 @@ function Categories({ value, onChangeCategory }) {
       </ul>
     </div>
   );
-}
+};
 
 export default Categories;

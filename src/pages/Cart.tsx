@@ -3,15 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../components/CartItem";
 import { clearItems, selectCart } from "../redux/slices/cartSlice";
 import CartEmpty from "../components/CartEmpty";
-const Cart = () => {
+import { JSX } from "react";
+const Cart = (): JSX.Element => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
-  const totalCount = items.reduce((sum, el) => {
+  const totalCount = items.reduce((sum: number, el: any) => {
     return sum + el.count;
   }, 0);
 
   const onClickClear = () => {
     if (window.confirm("Очистить корзину?")) {
+      // @ts-ignore
       dispatch(clearItems());
     }
   };
@@ -97,7 +99,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="content__items">
-          {items.map((item) => (
+          {items.map((item: any) => (
             <CartItem key={item.id} {...item} />
           ))}
         </div>

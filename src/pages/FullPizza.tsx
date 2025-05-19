@@ -1,9 +1,13 @@
 import { useNavigate, useParams } from "react-router";
-import React from "react";
+import React, { JSX } from "react";
 import axios from "axios";
 
-const FullPizza = () => {
-  const [pizza, setPizza] = React.useState();
+const FullPizza = (): JSX.Element => {
+  const [pizza, setPizza] = React.useState<{
+    imageUrl: string;
+    title: string;
+    price: number;
+  }>();
   const { id } = useParams();
   const navigate = useNavigate();
   React.useEffect(() => {

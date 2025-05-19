@@ -1,8 +1,5 @@
 import "./scss/app.scss";
 import Header from "./components/Header";
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./redux/slices/filterSlice";
-import React from "react";
 
 import AppRoutes from "./routes/routes";
 

@@ -1,6 +1,7 @@
 import styles from "./NotFoundBlock.module.scss";
+import { JSX } from "react";
 
-const NotFoundBlock = () => {
+const NotFoundBlock = (): JSX.Element => {
   return (
     <div className={styles.root}>
       <h1>
