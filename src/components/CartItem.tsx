@@ -1,6 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, minusItem, removeItem } from "../redux/slices/cartSlice";
+import {
+  addItem,
+  CartItem,
+  minusItem,
+  removeItem,
+} from "../redux/slices/cartSlice";
 import { JSX } from "react";
+import clsx from "clsx";
 
 type CartItemProps = {
   id: string;
@@ -12,7 +18,7 @@ type CartItemProps = {
   imageUrl: string;
 };
 
-const CartItem = ({
+const CartItemBlock = ({
   id,
   title,
   type,
@@ -23,7 +29,7 @@ const CartItem = ({
 }: CartItemProps): JSX.Element => {
   const dispatch = useDispatch();
   const onClickPlus = () => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id } as CartItem));
   };
 
   const onClickMinus = () => {
@@ -47,6 +53,7 @@ const CartItem = ({
       </div>
       <div className="cart__item-count">
         <button
+          disabled={count === 1}
           onClick={onClickMinus}
           className="button button--outline button--circle cart__item-count-minus"
         >
@@ -120,4 +127,4 @@ const CartItem = ({
   );
 };
 
-export default CartItem;
+export default CartItemBlock;
