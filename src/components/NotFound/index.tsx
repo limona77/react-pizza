@@ -1,5 +1,6 @@
-import styles from "./NotFoundBlock.module.scss";
 import { JSX } from "react";
+
+import styles from "./NotFoundBlock.module.scss";
 
 const NotFoundBlock = (): JSX.Element => {
   return (

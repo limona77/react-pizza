@@ -1,5 +1,5 @@
-import NotFoundBlock from "../components/NotFound";
 import { JSX } from "react";
+import NotFoundBlock from "../components/NotFound";
 
 const NotFound = (): JSX.Element => <NotFoundBlock />;
 

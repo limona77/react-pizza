@@ -1,9 +1,13 @@
 import { Link } from "react-router";
-import { useSelector, useDispatch } from "react-redux";
-import CartItem from "../components/CartItem";
-import { clearItems, selectCart } from "../redux/slices/cartSlice";
-import CartEmpty from "../components/CartEmpty";
 import { JSX } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import CartItem from "../components/CartItem";
+import CartEmpty from "../components/CartEmpty";
+
+import { selectCart } from "../redux/cart/selectors";
+import { clearItems } from "../redux/cart/slice";
+
 const Cart = (): JSX.Element => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
@@ -13,7 +17,6 @@ const Cart = (): JSX.Element => {
 
   const onClickClear = () => {
     if (window.confirm("Очистить корзину?")) {
-      // @ts-ignore
       dispatch(clearItems());
     }
   };

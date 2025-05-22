@@ -1,27 +1,26 @@
+import React, { JSX } from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router";
+import qs from "qs";
+
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
-import React, { JSX } from "react";
 import Pagination from "../components/Pagination";
-import { useSelector } from "react-redux";
+
+import { sortList } from "../components/Sort";
+import { useAppDispatch } from "../redux/store";
+import { selectFilter } from "../redux/filter/selectors";
 import {
-  FilterSliceState,
-  selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
-} from "../redux/slices/filterSlice";
+} from "../redux/filter/slice";
+import { selectPizzaData } from "../redux/pizza/selectors";
+import { fetchPizzas } from "../redux/pizza/AsyncActions";
+import { SearchPizzaParams } from "../redux/pizza/types";
 
-import {
-  fetchPizzas,
-  SearchPizzaParams,
-  selectPizzaData,
-} from "../redux/slices/pizzasSlice";
-import qs from "qs";
-import { sortList } from "../components/Sort";
-import { Link, useNavigate } from "react-router";
-import { useAppDispatch } from "../redux/store";
 const Home = (): JSX.Element => {
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);

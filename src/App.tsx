@@ -1,7 +1,8 @@
-import "./scss/app.scss";
 import Header from "./components/Header";
 
 import AppRoutes from "./routes/routes";
+
+import "./scss/app.scss";
 
 function App() {
   return (

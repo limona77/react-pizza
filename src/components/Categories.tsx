@@ -1,5 +1,6 @@
 import React, { JSX } from "react";
 import useWhyDidYouUpdate from "ahooks/lib/useWhyDidYouUpdate";
+
 type CategoriesProps = {
   value: number;
   onChangeCategory: (index: number) => void;
