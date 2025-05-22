@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 import { selectCart } from "../redux/cart/selectors";
 import { CartItem } from "../redux/cart/types";
+import Search from "./Search";
 
 function Header() {
   const { items, totalPrice } = useSelector(selectCart);
@@ -33,6 +34,7 @@ function Header() {
             </div>
           </div>
         </Link>
+        {location.pathname !== "/cart" && <Search />}
         <div className="header__cart">
           {location.pathname !== "/cart" && (
             <Link to="/cart" className="button button--cart">
